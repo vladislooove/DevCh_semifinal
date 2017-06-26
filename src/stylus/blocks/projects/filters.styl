@@ -1,0 +1,237 @@
+.projects__filter
+    padding 50px 0
+    
+    +below(767px)
+        padding 0
+    
+
+    
+.filter
+    &:not(:last-of-type)
+        margin-bottom 20px
+    
+    .nav
+        transform-origin top
+        transform scaleY(0)
+        opacity 0
+        max-height 0
+        border 1px solid #cad3df
+        border-bottom-left-radius 3px
+        border-bottom-right-radius 3px
+        padding 0
+        transition transform $time-md, opacity $time-md, max-height $time-md
+        
+        &.open
+            opacity 1
+            max-height 20000px
+            transform scaleY(1)
+            padding 10px 0
+        
+        >li
+            >a,
+            label
+                display block
+                padding 7px 20px
+                font-size 12px
+                font-weight 300
+                color $blue-darker
+                background-color transparent
+                
+                +between(767px, 991px)
+                    padding 7px 10px
+                
+                &:hover,
+                &:focus
+                    color $blue-base
+                    
+                &:active
+                    background-color #f4f6f9
+                    
+                &.checked
+                    color #fff
+                    background-color $blue-base
+                    
+    &--category
+        
+        .filter__toggle
+            .icon--list
+                margin-right 5px
+                fill #8493a8
+        
+        .nav
+        
+            >li              
+                >label
+                    position relative
+                    padding-left 45px
+                    transition all $time-md
+                    cursor pointer
+                    
+                    +between(767px, 991px)
+                        padding-left 35px
+                    
+                    &:active
+                        background-color transparent
+                    
+                    &::before
+                        display flex
+                        justify-content center
+                        align-items center
+                        position absolute
+                        content ''
+                        left 20px
+                        top 50%
+                        margin-top -12px
+                        border 1px solid #cad3df
+                        height 20px
+                        width @height
+                        font-size 17px
+                        color #8493a8
+                        
+                        +between(767px, 991px)
+                            left 10px
+                        
+                    &::after
+                        position absolute
+                        content ''
+                        top 50%
+                        left 30px
+                        transform translate(-50%, -50%)
+                        height 0
+                        width 0
+                        border-radius 50%
+                        background-color rgba(0, 0, 0, 0.2)
+                        
+                        +between(767px, 991px)
+                            left 20px
+                            
+
+                        
+                >input[type="checkbox"]
+                    display none
+                    
+                    &.checked+label
+                        &::before
+                            content '✔'
+                            
+                        &::after
+                            animation touch $time-md
+                            amimation-timing-function linear
+                            
+    &--location
+        .filter__toggle
+            .icon--map
+                margin 0 5px
+                fill $blue-darker
+    
+    &__toggle
+        display flex
+        justify-content space-between
+        margin-bottom -1px
+        padding 15px 20px
+        border 1px solid #cad3df
+        border-radius 3px
+        font-size 12px
+        color #8493a8
+        
+        .icon--arrow-down
+            fill #8493a8
+            transition transform $time-md
+        
+        &.open
+            .icon--arrow-down
+                transform rotate(-180deg)
+        
+        +between(767px, 991px)
+            padding 15px 10px
+    
+    &__title
+        margin-bottom 15px
+        font-size 14px
+        font-weight 700
+        text-transform uppercase
+        color $blue-darker  
+    
+    &__reset
+        border 2px solid $blue-base
+        border-radius 20px
+        padding 10px
+        font-size 13px
+        font-weight 700
+        text-align center
+        color $blue-base
+        transition all $time-md
+        
+        &:hover,
+        &:focus
+            color #fff
+            background-color $blue-base
+            
+        &:active
+            background-color $blue-darker
+            border-color $blue-darker
+            
+    &__quantity
+        display inline-flex
+        align-items center
+        justify-content center
+        margin-left 10px
+        padding-left 1px
+        border-radius 50%
+        width 15px
+        height 15px
+        font-size 10px
+        color #fff
+        background-color #df443f
+        
+    &--price
+        margin-bottom 45px
+        
+    &__controls
+        display flex
+        align-items center
+        margin-bottom 15px
+        
+        .divider
+            display inline-block
+            margin-right 5px
+            color $blue-lighten
+            
+        .currency
+            display inline-block
+            margin-right 5px
+            font-size 11px
+            font-weight 300
+            color $blue-darker
+
+    &__input
+        flex-shrink 1
+        margin-right 5px
+        padding 5px
+        width 100%
+        min-width 0
+        font-size 11px
+        font-weight 300
+        text-align center
+        color $blue-darker
+        outline none
+        border 1px solid $blue-lighten
+        transition border-color $time-md
+        
+        &:focus
+            border-color $blue-base
+            
+        &.error
+            border-color red
+            
+    &__btn
+        padding 5px
+        font-size 11px
+        font-weight 700
+        text-transform uppercase
+        color #fff
+        background-color $blue-base
+        
+        &:hover,
+        &:focus
+            background-color $blue-darker

@@ -1,0 +1,22 @@
+@import 'main-header__nav'
+@import 'main-header__search-bar'
+@import 'mobile-menu'
+@import 'membership'
+
+.main-header
+    border-bottom 1px solid $blue-lighten
+    
+    +below(991px)
+        padding 20px 0
+    
+    +below(767px)
+        margin-bottom 40px
+    
+    &__content
+        display flex
+        align-items center
+        justify-content space-between
+        
+    &__section
+        display flex
+        align-items center

@@ -1,0 +1,22 @@
+.main-footer__nav
+    .nav
+        >li
+            >a
+                padding 0 20px
+                font-size 12px
+                font-weight 300
+                color #fff
+
+                +below(1200px)
+                    padding 0 5px
+                    
+                &:hover,
+                &:focus
+                    color $blue-base
+                    
+                &:active
+                    color $blue-lighten
+                    
+            &:not(:last-of-type)
+                >a
+                    border-right 1px solid $blue-base

@@ -1,0 +1,64 @@
+.main-header__nav
+    flex-shrink 0
+    
+    .nav
+        +below(991px)
+            flex-direction column
+            border-bottom 2px solid $blue-base
+            
+        >li
+            >a
+                padding 30px 20px
+                font-size 13px
+                font-weight 700
+                color $blue-darker
+                
+                &::after
+                    content ''
+                    position absolute
+                    bottom 0
+                    left 50%
+                    right 50%
+                    width 0
+                    height 3px
+                    background-color $blue-base
+                    transition all $time-md
+
+                &:hover,
+                &:focus
+                    color $blue-base
+                    
+                    &::after
+                        width auto
+                        left 20px
+                        right 20px
+                        
+                +below(991px)
+                    border-top 2px solid $blue-base
+                    background-color #fff
+                    text-align center
+                    width 100%
+                    
+                    &::after
+                        content none
+                        
+                    &:hover,
+                    &:focus
+                        background-color $blue-base
+                        color #fff
+                        
+                    &:active
+                        background-color $blue-darker
+
+        >.active
+            >a
+                color $blue-base
+                
+                &::after
+                    width auto
+                    left 20px
+                    right 20px
+                    
+                +below(991px)
+                    background-color $blue-base
+                    color #fff

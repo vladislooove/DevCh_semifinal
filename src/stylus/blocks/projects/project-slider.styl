@@ -1,0 +1,49 @@
+.project-slider
+    margin-bottom 45px
+    
+    &-title
+        margin-bottom 15px
+        font-size 13px
+        font-weight 700
+        text-transform uppercase
+        color #8493a8
+
+    .slick-slider
+        padding 20px 100px 
+        background-color #eceff4
+    
+        +below(1200px)
+            padding 20px 70px
+        
+    .slick-arrow
+        position absolute
+        top 0
+        bottom 0
+        display flex
+        align-items center
+        justify-content center
+        width 50px
+        background-color #cad3df
+        transition background-color $time-md
+        
+        &:hover,
+        &:focus
+            background-color $blue-base
+            
+        &:active
+            background-color $blue-darker
+        
+        .icon
+            fill #fff
+        
+    .slick-prev
+        left 30px
+        
+        +below(1200px)
+            left 0
+        
+    .slick-next
+        right 30px
+        
+        +below(1200px)
+            right 0

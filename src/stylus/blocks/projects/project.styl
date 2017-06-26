@@ -1,0 +1,461 @@
+.project
+    &__main
+        border-right 1px solid $blue-lighten
+        padding-top 50px
+        padding-bottom 50px
+        padding-right 50px
+        
+        +below(767px)
+            border none
+            padding 0
+        
+    &__header
+        margin-bottom 15px
+        
+    &__title
+        margin 0
+        margin-bottom 25px
+        font-size 40px
+        font-weight 700
+        color $blue-darker
+        
+        +below(991px)
+            font-size 26px
+            
+        +below(767px)
+            font-size 22px
+            
+    &__status
+        @extend .project-card__status
+        margin-left 5px
+        
+    &__date
+        font-size 14px
+        font-weight 300
+        color #8493a8
+        
+    &__info
+        display flex
+        margin-bottom 50px
+        border 1px solid $blue-lighten
+        
+        +below(767px)
+            flex-direction column
+
+        &-section
+            flex-grow 1
+            padding 15px 30px
+            
+            &:not(:last-of-type)
+                border-right 1px solid $blue-lighten
+                
+                +below(767px)
+                    border-right none
+                    border-bottom 1px solid $blue-lighten
+                
+            +below(991px)
+                padding 15px
+                
+        &-title
+            margin-bottom 5px
+            font-size 12px
+            font-weight 700
+            text-transform uppercase
+            color #8493a8
+            
+    &__author
+        @extend .project-card__author
+        margin-bottom 0
+        
+        &-thumbnail
+            @extend .project-card__author-thumbnail
+            
+        &-name
+            @extend .project-card__author-name
+            font-size 13px
+            
+    &__category
+        display flex
+        align-items center
+        
+        &-thumbnail
+            position relative
+            margin-right 5px
+            border-radius 50%
+            height 35px
+            width 35px
+            overflow hidden
+            
+            >.icon
+                position absolute
+                fill #fff
+                top 50%
+                left 50%
+                transform translate(-50%, -50%)
+                max-width 70%
+                max-height 70%
+                
+            &--sport
+                background-color #f69d35
+                
+            &--house-manage
+                background-color #7740a2
+                
+            &--road-manage
+                background-color #2388d9
+                
+            &--health
+                background-color #e2548d
+                
+            &--ecology
+                background-color #bac928
+                
+            &--education
+                background-color #63c3dc
+                
+            &--media
+                background-color #ff916f
+            
+            &--it
+                background-color #0644a0
+                
+            &--social-support
+                background-color #9c4a96
+                
+            &--transport
+                background-color #762265
+                
+            &--velo
+                background-color #00d4c3
+                
+            &--public-order
+                background-color #ef2840
+                
+            &--energy
+                background-color #b3ac7a
+                
+            &--culture
+                background-color #00b06c
+            
+
+        &-name
+            font-size 13px
+            font-weight 300
+            color #8493a8
+            
+    &__code
+        margin-top 15px
+        font-size 13px
+        font-weight 300
+        color #8493a8
+        
+    &__content
+        box-shadow 5px 5px 50px 0 #cacaca
+        
+    &__tabs
+        &-controls
+            display flex
+            margin-bottom 50px
+            
+        &-control
+            display flex
+            align-items center
+            justify-content center
+            flex-basis 50%
+            border 1px solid #8493a8
+            padding 10px
+            font-size 13px
+            color #8493a8
+            transition color $time-md, background-color $time-md
+            
+            .icon
+                margin-right 10px
+                fill #8493a8
+                
+            &.active
+                background-color #8493a8
+                color #fff
+                
+                .icon
+                    fill #fff
+                    
+        &-content-section
+            opacity 0
+            height 0
+            overflow hidden
+            transition opacity $time-md
+            
+            &.active
+                opacity 1
+                height auto
+        
+    &__details
+        padding 0 30px
+        
+        &-title
+            margin-bottom 10px
+            font-size 12px
+            font-weight 700
+            text-transform uppercase
+            color #8493a8
+
+        &-label
+            margin-bottom 10px
+            font-size 12px
+            font-weight 700
+            text-transform none
+            color $blue-darker
+            
+        &-content
+            margin-bottom 20px
+            font-size 13px
+        
+        &--notes
+            padding-top 50px
+            padding-bottom 50px
+            background-color #eceff4
+            
+            .project__details
+                &-label
+                    text-transform uppercase
+                    color #8493a8
+                    
+                &-content
+                    font-weight 300
+                    color $blue-darker
+        
+    &__tabs-content
+        .project__details
+            &-label
+                text-transform uppercase
+                color #8493a8
+                
+            &-content
+                font-weight 300
+                color $blue-darker
+            
+    &__pricing
+        display flex
+        align-items center
+        justify-content space-between
+        margin-bottom 50px
+        padding 20px 30px
+        background-color #eceff4
+        
+        +below(568px)
+            flex-direction column
+        
+        &-download
+            border 2px solid #bac928
+            border-radius 50px
+            padding 10px 20px
+            background-color #bac928
+            font-size 13px
+            font-weight 700
+            color #fff
+            transition all $time-md
+
+            .icon
+                margin-right 10px
+                fill #fff
+                
+            &:hover,
+            &:focus
+                color #bac928
+                background-color transparent
+                
+                .icon
+                    fill #bac928
+                    
+            &:active
+                color #fff
+                background-color darken(#bac928, 30%)
+                border-color darken(#bac928, 30%)
+                
+                .icon
+                    fill #fff
+        
+    &__budget
+        +below(568px)
+            margin-bottom 20px
+            text-align center
+            
+        &-label
+            margin-bottom 5px
+            font-size 13px
+            font-weight 700
+            text-transform uppercase 
+            color #8493a8
+            
+        &-val
+            font-size 30px
+            font-weight 700
+            color $blue-darker
+            
+    &__files
+        margin-bottom 45px
+        
+        &-title
+            margin-bottom 10px
+            font-size 12px
+            font-weight 700
+            text-transform uppercase
+            color #8493a8
+            
+    &__file
+        display block
+        padding 10px 0
+        border-bottom 1px solid #f4f6f9
+        font-size 13px
+        font-weight 700
+        color #8493a8
+        
+        &-name
+            color #bac928
+        
+        &-ext
+            color #8493a8
+            
+        &:hover,
+        &:focus
+            text-decoration underline
+            
+    &__examples
+        @extend .project__files
+        
+        &-link
+            font-size 13px
+            font-weight 700
+            color #bac928
+            
+            &:hover,
+            &:focus
+                text-decoration underline
+                
+    &__aside
+        padding 50px 0
+        
+    &__timeline
+        color #fff
+        background-color #bac928
+        
+        &-section
+            padding 20px 5px
+            text-align center
+            
+            &:not(:first-of-type)
+                border-top 1px solid #fff
+        
+        &-label
+            font-size 10px
+            font-weight 700
+            text-transform uppercase
+            
+        &-content
+            font-size 30px
+            
+    &__form
+        margin-bottom 30px
+        border 1px solid $blue-lighten
+        border-top none
+        padding 30px 20px
+        
+        &-title
+            display block
+            margin-bottom 20px
+            font-size 14px
+            font-weight 700
+            text-transform uppercase
+            color $blue-darker
+            
+        &-input
+            margin-bottom 20px
+            border-radius 3px
+            border 1px solid #cad3df
+            padding 20px
+            width 100%
+            outline none
+            font-size 13px
+            transition border-color $time-md
+            box-shadow none
+            
+            &:focus
+                border-color $blue-base
+                
+        &-checkbox
+            display none
+            
+            &+label
+                @extend .filter .nav >li >a
+                @extend .filter--category .nav >li >label
+                margin-bottom 30px
+                padding-left 25px
+
+                &::before
+                    top 18px
+                    left 0
+                    transform none
+            
+            &:checked + label
+                &::before
+                    content '✔'
+                &::after
+                    left 10px
+                    animation touch $time-md
+                    
+        &-submit
+            @extend .project__pricing-download
+            width 100%
+            
+        +between(767px, 991px)
+            padding 30px 10px
+            
+    &__sharing
+        &-title
+            margin-bottom 10px
+            font-size 11px
+            font-weight 700
+            color $blue-darker
+
+        .nav
+            >li
+                flex-grow 1
+                
+                >a
+                    padding 10px 0
+                    width 100%
+                    text-align center
+                    opacity 1
+                    transition opacity $time-md
+                    
+                    &:hover,
+                    &:focus
+                        opacity 0.8
+                        
+                    &:active
+                        opacity 0.5
+                    
+                    .icon
+                        fill #fff
+                    
+                    &.twitter
+                        background-color #00aced
+                        
+                    &.vk
+                        background-color #4c75a3
+                    
+                    &.google-plus
+                        background-color #e14d3a
+                        
+                    &.facebook
+                        background-color #3c5a99
+                    
+                &:first-of-type
+                    >a
+                        border-top-left-radius 3px
+                        border-bottom-left-radius 3px
+                        
+                &:last-of-type
+                    >a
+                        border-top-right-radius 3px
+                        border-bottom-right-radius 3px

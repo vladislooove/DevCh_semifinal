@@ -1,0 +1,186 @@
+.project-card
+    position relative
+    display block
+    margin-bottom 50px
+    border 1px solid $blue-lighten
+    animation lazyLoad $time-md
+    
+    &::after
+        content ''
+        position absolute
+        top 0
+        left 0
+        right 0
+        bottom 0
+        opacity 0
+        box-shadow 5px 5px 30px 0 $blue-darker
+        transition opacity $time-md
+        
+    &:hover,
+    &:focus
+        &::after
+            opacity 1
+    
+    &__content
+        padding 35px 30px 25px 
+        
+        +below(991px)
+            padding 35px 15px 25px
+        
+    &__category
+        display flex
+        align-items center
+        padding 0 30px
+        padding-left 20px
+        height 40px
+        font-size 12px
+        font-weight 700
+        text-transform uppercase
+        color #fff
+        
+        .icon
+            margin-right 10px
+            fill #fff
+        
+        &--sport
+            background-color #f69d35
+            
+        &--house-manage
+            background-color #7740a2
+            
+        &--road-manage
+            background-color #2388d9
+            
+        &--health
+            background-color #e2548d
+            
+        &--ecology
+            background-color #bac928
+            
+        &--education
+            background-color #63c3dc
+            
+        &--media
+            background-color #ff916f
+        
+        &--it
+            background-color #0644a0
+            
+        &--social-support
+            background-color #9c4a96
+            
+        &--transport
+            background-color #762265
+            
+        &--velo
+            background-color #00d4c3
+            
+        &--public-order
+            background-color #ef2840
+            
+        &--energy
+            background-color #b3ac7a
+            
+        &--culture
+            background-color #00b06c
+        
+    &__title
+        margin-bottom 5px
+        font-size 14px
+        font-weight 700
+        color $blue-darker
+        
+    &__status
+        display inline-block
+        padding 2px 10px
+        border-radius 10px
+        font-size 11px
+        font-weight 700
+        color #fff
+        
+        &--positive
+            background-color #04be5b
+            
+        &--neutral
+            background-color #459ddd
+            
+        &--negative
+            background-color #8493a8
+            
+    &__header
+        margin-bottom 10px
+        min-height 80px
+        
+    &__date
+        margin-bottom 15px
+        font-size 10px
+        font-weight 700
+        color #8493a8
+        
+    &__description
+        margin-bottom 20px
+        font-size 12px
+        font-weight 300
+        color #8493a8
+        
+    &__author-title
+        margin-bottom 10px
+        font-size 10px
+        font-weight 700
+        text-transform uppercase
+        color #8493a8
+        
+    &__author
+        display flex
+        align-items center
+        margin-bottom 10px
+        
+    &__author-thumbnail
+        position relative
+        z-index 10
+        margin-right 5px
+        border-radius 50%
+        width 35px
+        height 35px
+        overflow hidden
+        
+        >img
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            max-width 100%
+            
+    &__author-name
+        font-size 12px
+        font-weight 300
+        color #8493a8
+        
+    &__budget
+        display flex
+        align-items center
+        justify-content space-between
+        margin 0
+        padding 10px 0
+        border-top 1px solid $blue-lighten
+        
+        &-label
+            font-size 12px
+            font-weight 700
+            text-transform uppercase
+            color #8493a8
+        
+        &-val
+            display flex
+            align-items center
+            margin 0
+            font-size 14px
+            font-weight 700
+            color $blue-darker
+            
+            .icon
+                margin-right 5px
+                fill $blue-darker
+            
+    &__votes
+        @extend .project-card__budget

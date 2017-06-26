@@ -1,0 +1,35 @@
+.mobile-menu
+    position absolute
+    top 73px
+    left 0
+    right 0
+    z-index 10000
+    max-height 0
+    transform-origin top
+    opacity 0
+    transform scaleY(0)
+    overflow hidden
+    transition transform $time-md, opacity $time-md, max-height $time-md
+    
+    &.open
+        max-height 10000px
+        opacity 1
+        transform scaleY(1)
+        
+    &-toggle
+        display none
+        
+        .icon
+            fill $blue-base
+        
+        &:hover,
+        &:focus
+            .icon
+                animation toBottomFromTop $time-md
+                
+        &.open
+            .icon
+                fill $blue-darker
+
+        +below(991px)
+            display block

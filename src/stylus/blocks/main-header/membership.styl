@@ -1,0 +1,71 @@
+.membership
+    display flex
+    align-items center
+
+    &__thumbnail
+        flex-shrink 0
+        position relative
+        z-index 10
+        margin-right 10px
+        border-radius 50%
+        width 35px
+        height 35px
+        overflow hidden
+        box-shadow 0 0 8px 0 $blue-base
+        
+        >img
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            max-width 100%
+
+    &__actions-btn
+        font-size 13px
+        font-weight 700
+        color $blue-darker
+        transition color $time-md
+        
+        .icon
+            fill $blue-darker
+            transition transform $time-md
+        
+        &.open
+            .icon
+                transform rotate(-180deg)
+        
+        &:hover,
+        &:focus
+            color $blue-base
+                
+    &__actions
+        position relative
+        
+        .nav
+            position absolute
+            left 0
+            right 0
+            transform-origin top
+            transform scaleY(0)
+            opacity 0
+            border 1px solid $blue-lighten
+            transition opacity $time-md, transform $time-md
+            
+            >li
+                >a
+                    padding 5px
+                    font-size 13px
+                    font-weight 700
+                    color $blue-darker
+                    transition color $time-md
+                    
+                    &:hover,
+                    &:focus
+                        color $blue-base
+                    
+
+            &.open
+                transform scaleY(1)
+                opacity 1
+            
+        

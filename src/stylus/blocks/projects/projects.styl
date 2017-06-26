@@ -1,0 +1,44 @@
+@import 'project-card'
+@import 'filters'
+@import 'project'
+@import 'project-slider'
+
+.projects
+    &__main
+        border-left 1px solid $blue-lighten
+        padding 50px 30px 0
+        padding-right 0
+        min-height calc(100vh - 203px)
+        height 100%
+        
+        +below(767px)
+            border none
+            margin-top -1px
+            padding-left 0
+            
+    &__footer
+        margin-bottom 50px
+        text-align center
+        
+            
+    &__footer-btn
+        display inline-block
+        border-radius 50px
+        border 2px solid $blue-base
+        padding 15px 35px
+        font-size 14px
+        font-weight 700
+        color #fff
+        background-color $blue-base
+        transition all $time-md
+        
+        &:hover,
+        &:focus
+            color $blue-base
+            background-color #fff
+            
+        &:active
+            color #fff
+            border-color $blue-darker
+            background-color $blue-darker
+        
